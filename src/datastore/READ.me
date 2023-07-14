@@ -1,0 +1,15 @@
+Kindの追加方法
+
+[工事中]
+1.クエリ実行ファイル：：[Kind名].go
+  1-1:goファイル
+    /datastore/query/の下に、query[Kind名].goファイルを準備する
+  1-2:共通変数
+    /datastore/entity/entity.goのinit関数にNamespace、またはNamespaceのprefixやsuffixを登録する
+      例:nk["Items"] = nsKind{ns: "WhatYa-Attachment", kind: "Items"}
+  1-3:
+
+2./datastore/entity/entity.goに、Entity格納用のstructを追加する
+  type "Entity[Kind名]" struct {
+    property...
+  }
